@@ -11,27 +11,27 @@
 </template>
 
 <script>
-import axios from "axios"
+import axios from "axios";
 
 export default {
   data() {
     return {
       users: null
-    }
+    };
   },
   mounted() {
     axios
       .get("https://jsonplaceholder.typicode.com/users")
       .then(response => {
-        return response.data
+        return response.data;
       })
       .then(data => {
-        this.users = data
-        console.log(data)
+        this.users = data;
+        console.log(data);
       })
       .catch(error => {
-        console.log(error)
-      })
+        console.log(error);
+      });
   }
 };
 </script>
@@ -45,5 +45,7 @@ export default {
     list-style-type: none
     display: flex
     flex-direction: column
-    padding: 0
+    padding: 10px 15px
+    border: 1px solid rgba(0,0,0,.2)
+
 </style>
