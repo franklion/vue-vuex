@@ -1,19 +1,19 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
+import Home from '@/page/Home'
 import Users from '@/page/Users'
 import Open1999 from '@/page/Open1999'
 import Counter from '@/page/Counter'
+import Signup from '@/page/Signup'
+import Signin from '@/page/Signin'
+import Dashboard from '@/page/Dashboard'
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },
     {
       path: '/users',
       name: 'Users',
@@ -28,6 +28,26 @@ export default new Router({
       path: '/counter',
       name: 'Counter',
       component: Counter
+    },
+    {
+      path: '/signup',
+      name: 'Signup',
+      component: Signup
+    },
+    {
+      path: '/signin',
+      name: 'Signin',
+      component: Signin
+    },
+    {
+      path: '/dashboard',
+      name: 'Dashboard',
+      component: Dashboard
+    },
+    {
+      path: '/',
+      name: 'Home',
+      component: Home
     }
   ]
 })

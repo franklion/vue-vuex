@@ -9,13 +9,13 @@ import axios from "axios";
 
 export default {
   mounted() {
-    let apiUrl =
-      "http://work1999.kcg.gov.tw/open1999/ServiceRequestsQuery.asmx/ServiceRequestsQuery";
+    let apiUrl = 'https://franklion-resume.herokuapp.com/api/open1999'
+     
 
     axios({
         url: apiUrl,
         headers: { Accept: 'application/json' },
-        credentials: 'same-origin',
+        // credentials: 'same-origin',
         method: 'GET',
       })
       .then(response => {
