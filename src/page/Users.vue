@@ -11,27 +11,40 @@
 </template>
 
 <script>
-import axios from "axios";
+// import axios from "axios";
+import { mapGetters, mapActions } from "vuex";
+
 
 export default {
   data() {
     return {
-      users: null
+      // users: null
     };
   },
+  computed: {
+    ...mapGetters({
+      users: 'getUsers'
+    })
+  },
+  methods: {
+    ...mapActions(['actionFetchUsers'])
+  },
   mounted() {
-    axios
-      .get("https://jsonplaceholder.typicode.com/users")
-      .then(response => {
-        return response.data;
-      })
-      .then(data => {
-        this.users = data;
-        console.log(data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+
+    this.actionFetchUsers();
+    // axios
+    //   .get("https://jsonplaceholder.typicode.com/users")
+    //   .then(response => {
+    //     console.log(response)
+    //     return response.data;
+    //   })
+    //   .then(data => {
+    //     this.users = data;
+    //     console.log(data);
+    //   })
+    //   .catch(error => {
+    //     console.log(error);
+    //   });
   }
 };
 </script>

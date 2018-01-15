@@ -3,6 +3,7 @@
     <h1>counter page</h1>
     <p>{{ count }}</p>
     <button @click="actionIncrease(5)">add</button>
+    <button @click="actionDecrease(5)">decrease</button>
   </div>  
 </template>
 
@@ -22,7 +23,10 @@ export default {
     })
   },
   methods: {
-    ...mapActions(["actionIncrease"])
+    summit() {
+
+    },
+    ...mapActions(["actionIncrease","actionDecrease"])
   }
 };
 </script>

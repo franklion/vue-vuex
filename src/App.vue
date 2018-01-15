@@ -1,14 +1,17 @@
-<template>
-  <div id="app">
-    <img src="./assets/images/watermelon.svg">
-    
-    <router-view/>
-  </div>
+<template lang="pug">
+  div#app
+    app-nav
+    router-view
 </template>
 
 <script>
+import appNav from './components/Nav.vue'
+
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    'app-nav' : appNav
+  }
 }
 </script>
 

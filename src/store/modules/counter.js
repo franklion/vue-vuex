@@ -12,6 +12,13 @@ const actions = {
   }, number ) {
     // console.log(number)
     commit('increase', number)
+  },
+
+  actionDecrease({
+    commit
+  }, number ) {
+    // console.log(number)
+    commit('decrease', number)
   }
 }
 
@@ -19,8 +26,12 @@ const actions = {
 const mutations = {
   ['increase'] (state, number) {
     state.count += number
+  },
+  ['decrease'] (state, number) {
+    state.count -= number
   }
 }
+
 
 
 export default {
