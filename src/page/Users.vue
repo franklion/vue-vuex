@@ -31,7 +31,10 @@ export default {
   },
   mounted() {
 
+    // 使用 vuex 取得資料
     this.actionFetchUsers();
+
+
     // axios
     //   .get("https://jsonplaceholder.typicode.com/users")
     //   .then(response => {
