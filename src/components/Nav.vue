@@ -3,6 +3,7 @@
     router-link.link(to="/") Home
     router-link.link(to="/counter") Counter
     router-link.link(to="/users") Users
+    router-link.link(to="/controlpanel") ControlPanel
 </template>
 
 <script>

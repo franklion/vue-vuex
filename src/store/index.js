@@ -11,6 +11,7 @@ import Vuex from 'vuex'
 
 import counter from './modules/counter';
 import users from './modules/users';
+import colors from './modules/colors';
 
 Vue.use(Vuex);
 
@@ -24,7 +25,8 @@ export default new Vuex.Store({
 
   modules: {
     counter,
-    users
+    users,
+    colors
   },
   // 嚴格模式，禁止直接修改 state
   strict: true

@@ -8,6 +8,7 @@ import Counter from '@/page/Counter'
 import Signup from '@/page/Signup'
 import Signin from '@/page/Signin'
 import Dashboard from '@/page/Dashboard'
+import ControlPanel from '@/page/ControlPanel'
 
 Vue.use(Router)
 
@@ -48,6 +49,11 @@ export default new Router({
       path: '/',
       name: 'Home',
       component: Home
+    },
+    {
+      path: '/controlpanel',
+      name: 'ControlPanel',
+      component: ControlPanel
     }
   ]
 })
