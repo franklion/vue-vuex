@@ -52,7 +52,7 @@ export default {
 };
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
 .list-container
   .list-ul
     width: 190px
@@ -63,5 +63,4 @@ export default {
     flex-direction: column
     padding: 10px 15px
     border: 1px solid rgba(0,0,0,.2)
-
 </style>

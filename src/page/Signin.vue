@@ -4,38 +4,45 @@
      
     <div class="signin-form">
       <div>
-        <input type="text" class="form-input" v-model="account">
+        <input type="text" class="form-input" v-model="account" placeholder="type email">
       </div>
       <div>
-        <input type="password" class="form-input" v-model="passowrd">
+        <input type="password" class="form-input" v-model="passowrd" placeholder="type password">
       </div>
       <div class="form-btn" @click="onSubmit">submit</div>
-    </div>
-     
+    </div>     
    </div>
 </template>
 
 
 <script>
+import { mapGetters, mapActions } from "vuex";
+
 export default {
   data() {
     return {
-      account: "test4@gmail.com",
-      passowrd: "apple1227"
+      account: 'test1@gmail.com',
+      passowrd: 'a123456'
     };
   },
+  computed: {
+    ...mapGetters({
+      idToken :'getIdToken'
+    })
+  },
   methods: {
+    ...mapActions(['actionSignIn']),
     onSubmit() {
+
       const formData = {
         email: this.account,
         password: this.passowrd
       };
 
-      this.$store.dispatch("actionLogin", {
-        email: formData.email,
-        password: formData.password
-      });
-    }
+      this.actionSignIn(formData)
+          .then( res => console.log(res) )
+          .catch( err => console.log(err) )
+    },
   }
 };
 </script>

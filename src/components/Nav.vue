@@ -4,6 +4,9 @@
     router-link.link(to="/counter") Counter
     router-link.link(to="/users") Users
     router-link.link(to="/controlpanel") ControlPanel
+    router-link.link(to="/signin") SignIn
+    router-link.link(to="/signup") SignUp
+    router-link.link(to="/foods") Foods
 </template>
 
 <script>
@@ -18,6 +21,12 @@ export default {
 
 <style lang="sass">
 .app-nav
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: row
+  flex-wrap: wrap
+  
   .link
     color: #000
     display: inline-block

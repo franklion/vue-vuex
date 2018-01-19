@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 import Home from '@/page/Home'
 import Users from '@/page/Users'
 import Open1999 from '@/page/Open1999'
@@ -9,6 +8,7 @@ import Signup from '@/page/Signup'
 import Signin from '@/page/Signin'
 import Dashboard from '@/page/Dashboard'
 import ControlPanel from '@/page/ControlPanel'
+import Foods from '@/page/Foods'
 
 Vue.use(Router)
 
@@ -54,6 +54,11 @@ export default new Router({
       path: '/controlpanel',
       name: 'ControlPanel',
       component: ControlPanel
+    },
+    {
+      path: '/foods',
+      name: 'Foods',
+      component: Foods
     }
   ]
 })
