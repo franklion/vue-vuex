@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.foods-container
+  div.foods-container(:class="{ 'is-show' : !loading}")
     div.foods-container-content(v-if="isValidAuth")
       h1 食物列表
       div.list-container
@@ -20,7 +20,8 @@ export default {
   computed: {
     ...mapGetters({
       idToken :'getIdToken',
-      foods: 'getFoods'
+      foods: 'getFoods',
+      loading: 'getLoading',
     })
   },
   methods: {
@@ -44,6 +45,9 @@ export default {
 <style lang="sass" scoped>
 .foods-container
   padding: 50px 0
+  opacity: 0
+  &.is-show
+    opacity: 1
 
 .list-container
   .list-ul

@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 // root types
-import * as rootypes from '../mutations_types.js';
+import * as rootTypes from '../mutations_types.js';
 
 const types = {
   OPEN_1999: 'environment/OPEN_1999',
@@ -43,7 +43,7 @@ const getters = {
 const actions = {
   actionGetOpenData({ commit }) {
     // 啟動 loading
-    commit(rootypes.LOADING, true);
+    commit(rootTypes.LOADING, true);
 
     return new Promise((resolve, reject) => {
 
@@ -59,13 +59,13 @@ const actions = {
         commit(types.OPEN_1999, response.data)
 
         // 關閉 loading
-        commit(rootypes.LOADING, false);
+        commit(rootTypes.LOADING, false);
       })
       .catch(err => {
         console.log(err)
 
         // 關閉 loading
-        commit(rootypes.LOADING, false);
+        commit(rootTypes.LOADING, false);
       })  
     })
   },

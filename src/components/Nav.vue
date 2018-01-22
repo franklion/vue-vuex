@@ -7,6 +7,7 @@
     router-link.link(to="/signin") SignIn
     router-link.link(to="/signup") SignUp
     router-link.link(to="/foods") Foods
+    router-link.link(to="/open1999") Open1999
 </template>
 
 <script>
