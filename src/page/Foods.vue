@@ -1,15 +1,22 @@
 <template lang="pug">
-  div
-    h1 Welcome to Foods Page
-    div.list-container
-      ul.list-ul
-        li(v-for="(food,index) in foods" :key="index") {{ food.id }} - {{ food.name }}
+  div.foods-container
+    div.foods-container-content(v-if="isValidAuth")
+      h1 食物列表
+      div.list-container
+        ul.list-ul
+          li(v-for="(food,index) in foods" :key="index") {{ food.id }} - {{ food.name }}
+    h3(v-else) Sorry! 你沒有權限觀看食物列表，請先登入！    
 </template>
 
 <script>
 import { mapGetters, mapActions } from "vuex";
 
 export default {
+  data() {
+    return {
+      isValidAuth : false
+    }
+  },
   computed: {
     ...mapGetters({
       idToken :'getIdToken',
@@ -21,14 +28,23 @@ export default {
   },
   mounted() {
     this.actionFetchFoods( this.idToken )
-        .then( res => console.log(res) )
-        .catch( err => console.error(err) )
+        .then( res => {
+          this.isValidAuth = true
+          console.log(res)
+        } )
+        .catch( err => {
+          this.isValidAuth = false
+          console.error(err)
+        })
   }
 }
 </script>
 
 
 <style lang="sass" scoped>
+.foods-container
+  padding: 50px 0
+
 .list-container
   .list-ul
     width: 190px

@@ -1,0 +1,78 @@
+
+// 圓圈loading
+
+// css3動畫參數
+// animation: animation-name , animation-duration, animation-timing-function, animation-delay, animation-iteration-count, animation-direction
+
+$loading-bg: rgba(0,0,0,.85)
+
+@keyframes rotate-loading
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+
+@keyframes loading-text-opacity 
+  0% 
+    opacity: 0
+  20% 
+    opacity: 0
+  50% 
+    opacity: 1
+  100% 
+    opacity: 0
+
+.loading-wrapper 
+  position: fixed
+  display: flex
+  justify-content: center
+  align-items: center
+  box-sizing: border-box
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  overflow: hidden
+  z-index: 999999
+  background-color: $loading-bg
+
+
+.loading-container, .loading 
+  height: 100px
+  position: relative
+  width: 100px
+  border-radius: 100%
+
+
+.loading-container
+  margin: 40px auto 
+
+.loading 
+  border: 2px solid transparent
+  border-color: transparent #fff transparent #FFF
+  animation: rotate-loading 1.5s linear 0s infinite normal
+  transform-origin: 50% 50%
+
+
+
+
+.loading-container:hover .loading 
+  border-color: transparent #6bf2ff transparent #6bf2ff
+
+.loading-container:hover .loading, .loading-container .loading 
+  transition: all 0.5s ease-in-out
+
+
+#loading-text 
+  color: #ffffff
+  font-size: 10px
+  font-weight: bold
+  margin-top: 45px
+  opacity: 0
+  position: absolute
+  text-align: center
+  text-transform: uppercase
+  top: 0
+  width: 100px
+  animation: loading-text-opacity 2s linear 0s infinite normal
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif  

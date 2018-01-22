@@ -19,6 +19,12 @@ const actions = {
   }, number ) {
     // console.log(number)
     commit('decrease', number)
+  },
+
+  actionReset({
+    commit
+  }) {
+    commit('reset')
   }
 }
 
@@ -29,6 +35,9 @@ const mutations = {
   },
   ['decrease'] (state, number) {
     state.count -= number
+  },
+  ['reset'] (state) {
+    state.count = 0
   }
 }
 

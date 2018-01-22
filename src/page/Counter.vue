@@ -1,10 +1,12 @@
-<template>
-  <div class="container">
-    <h1>counter page</h1>
-    <p>{{ count }}</p>
-    <button @click="actionIncrease(5)">add</button>
-    <button @click="actionDecrease(5)">decrease</button>
-  </div>  
+<template lang="pug">
+
+  div.counter-container
+    h1 計數器
+    p {{ count }}
+    button.btn.btn-primary(@click="actionIncrease(5)") add
+    button.btn.btn-primary(@click="actionDecrease(5)") decrease
+    button.btn.btn-primary(@click="actionReset()") reset
+
 </template>
 
 <script>
@@ -23,10 +25,16 @@ export default {
     })
   },
   methods: {
-    summit() {
-
-    },
-    ...mapActions(["actionIncrease","actionDecrease"])
+    ...mapActions(["actionIncrease","actionDecrease", "actionReset"])
   }
 };
 </script>
+
+<style lang="sass">
+.counter-container
+  padding: 50px 0
+
+  .btn
+    display: inline-block
+    margin: 0 5px
+</style>

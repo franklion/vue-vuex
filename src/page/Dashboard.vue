@@ -1,8 +1,9 @@
-<template>
-  <div>
-    <h1>Dash Board</h1>
-    <h3 v-if="userName">Welcome {{ userName }} coming!</h3>
-  </div>
+<template lang="pug">
+
+  div.dashboard-container
+    h1 Dash Board
+    h3(v-if="userName") Welcome {{ userName }} coming!
+
 </template>
 
 <script>

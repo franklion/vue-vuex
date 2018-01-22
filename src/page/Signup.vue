@@ -1,21 +1,16 @@
-<template>
-   <div>
+<template lang="pug">
 
-     <h1>Sign Up</h1>
-     <div class="signin-form">
-       <div>
-       <input type="text" class="form-input" v-model="account" placeholder="type email">
-     </div>
-     <div>
-       <input type="password" class="form-input" v-model="passowrd" placeholder="type password">
-     </div>
-     <div>
-       <input type="password" class="form-input" v-model="rePassword" placeholder="type password again">
-     </div>
-     <div class="form-btn" @click="onSubmit">submit</div>
-     </div>
-     
-   </div>
+  div.signup-container
+    h1 註冊
+    div.signin-form
+      div
+        input.form-input(type="text" v-model="account" placeholder="type email")
+      div
+        input.form-input(type="password" v-model="passowrd" placeholder="type password")
+      div
+        input.form-input(type="password" v-model="rePassword" placeholder="type password again")
+      div.form-btn(@click="onSubmit") submit
+
 </template>
 
 
@@ -64,6 +59,7 @@ export default {
 </script>
 
 <style lang="sass">
-
+.signup-container
+  padding: 50px 0
 </style>
 

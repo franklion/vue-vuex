@@ -1,13 +1,13 @@
-<template>
-  <div>
-    <h1>Users Page</h1>
-    <p>使用axios呼叫fake json api</p>
-    <div class="list-container">
-      <ul class="list-ul">
-        <li v-for="(user,index) in users" :key="index">{{ (index+1) + '. ' + user.name }}</li>
-      </ul>
-    </div>
-  </div>
+<template lang="pug">
+
+  div.users-container
+    h1 使用者名單
+    p 使用axios呼叫fake json api
+    
+    div.list-container
+      ul.list-ul
+        li(v-for="(user,index) in users" :key="index") {{ (index+1) + '. ' + user.name }}
+
 </template>
 
 <script>
@@ -53,6 +53,9 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+.users-container
+  padding: 50px 0
+
 .list-container
   .list-ul
     width: 190px

@@ -1,17 +1,14 @@
-<template>
-   <div>
-    <h1>Sign In</h1>
-     
-    <div class="signin-form">
-      <div>
-        <input type="text" class="form-input" v-model="account" placeholder="type email">
-      </div>
-      <div>
-        <input type="password" class="form-input" v-model="passowrd" placeholder="type password">
-      </div>
-      <div class="form-btn" @click="onSubmit">submit</div>
-    </div>     
-   </div>
+<template lang="pug">
+
+  div.signin-container
+    h1 登入
+    div.signin-form
+      div
+        input.form-input(type="text" v-model="account" placeholder="type email")
+      div
+        input.form-input(type="password" v-model="passowrd" placeholder="type password")
+      div.form-btn(@click="onSubmit") 送出 
+
 </template>
 
 
@@ -48,5 +45,6 @@ export default {
 </script>
 
 <style lang="sass">
-
+.signin-container
+  padding: 50px 0
 </style>

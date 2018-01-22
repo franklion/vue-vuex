@@ -1,16 +1,17 @@
 <template lang="pug">
-  .control-panel
+  div.control-panel-container
+    div.control-panel
 
-    h1 父元件的資料
-    .color-list
-      .color-item(v-for="color in colors") {{ color }}
+      h1 父元件的資料
+      .color-list
+        .color-item(v-for="color in colors") {{ color }}
 
-    h1 子元件的資料
-    colors(:propsColors="colors" v-if="colors")
+      h1 子元件的資料
+      colors(:propsColors="colors" v-if="colors")
 
-    hr
+      hr
 
-    button(@click="actionChangeColor") 修改
+      button(@click="actionChangeColor") 修改
 </template>
 
 <script>
@@ -38,3 +39,9 @@ import colors from '@/components/Colors.vue'
     }
   }
 </script>
+
+<style lang="sass">
+.control-panel-container
+ padding: 50px 0
+</style>
+
