@@ -12,6 +12,7 @@ import {
 import counter from './modules/counter';
 import colors from './modules/colors';
 import signIn from './modules/signIn';
+import signUp from './modules/signUp';
 import foods from './modules/foods';
 import users from './modules/users';
 import open1999 from './modules/open1999';
@@ -31,6 +32,7 @@ export default new Vuex.Store({
     foods,
     colors,
     signIn,
+    signUp,
     users,
     open1999
   },
