@@ -7,7 +7,7 @@
         .color-item(v-for="color in colors") {{ color }}
 
       h1 子元件的資料
-      colors(:propsColors="colors" v-if="colors")
+      colors(:propsColors="colors")
 
       hr
 

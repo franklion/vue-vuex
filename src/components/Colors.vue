@@ -1,9 +1,8 @@
 <template lang="pug">
   .color-wrapper
     .color-list
-      .color-item(v-for="color in propsColors") {{ color.name }}
-
-    input(type="text" v-model="c")
+      .color-item(v-for="colorData in colorsData") 
+        p {{ colorData.id }} - {{ colorData.name }}   
 </template>
 
 <script>
@@ -11,25 +10,14 @@
     name: 'colors',
     data () {
       return {
-        c: this.propsColors[0].name,
-        id: '',
+        colorsData: this.propsColors,
       }
     },
     props: ['propsColors'],
-    // computed: {
-    //   id() {
-    //     return this.c.id
-    //   }
-    // },
-    // watch: {
-    //   propsColors() {
-    //     console.log('change')
-    //     // { id: 1, name: blue }
-    //     this.c = this.propsColors
-    //   }
-    // },
-    // mounted() {
-    //   this.c = this.propsColors
-    // }
+    watch: {
+      propsColors() {
+        this.colorsData = this.propsColors;
+      }
+    }
   }
 </script>

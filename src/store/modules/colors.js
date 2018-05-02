@@ -14,8 +14,8 @@ const actions = {
 
   actionInitColors({ commit }) {
     setTimeout(() => {
-      const initColors = [{ id: 1, name: 'blue' }]
-      commit('initColors', initColors)
+      const response = [{ id: 1, name: 'blue' }]
+      commit('fetchColors', response)
     }, 1500 )
   }
 
@@ -23,11 +23,10 @@ const actions = {
 
 const mutations = {
   ['changeColor'] (state) {
-    state.colors.pop()
     state.colors.push({ id: 2, name: 'red' })
   },
-  ['initColors'] (state, initColors) {
-    state.colors = initColors
+  ['fetchColors'] (state, response) {
+    state.colors = response
   }
 
 }
