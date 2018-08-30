@@ -5,6 +5,16 @@ import App from './App'
 import router from './router'
 import store from './store'
 
+
+// import $ from 'jquery'
+// import 'jquery-ui'
+// require("jquery-ui")
+
+
+import $ from './assets/libs/jquery/js/jquery-3.3.1.min.js'
+import './assets/libs/jquery-ui/js/jquery-ui.js'
+import './assets/libs/jquery-ui/css/jquery-ui.css'
+
 Vue.config.productionTip = false
 
 export const eventBus = new Vue();
