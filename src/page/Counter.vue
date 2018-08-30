@@ -20,12 +20,12 @@ export default {
     return {};
   },
   computed: {
-    ...mapGetters({
+    ...mapGetters('counter', {
       count: "getCount"
     })
   },
   methods: {
-    ...mapActions(["actionIncrease","actionDecrease", "actionReset"])
+    ...mapActions('counter', ["actionIncrease","actionDecrease", "actionReset"])
   }
 };
 </script>
