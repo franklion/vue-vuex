@@ -9,6 +9,7 @@ import Signin from '@/page/Signin'
 import Dashboard from '@/page/Dashboard'
 import ControlPanel from '@/page/ControlPanel'
 import Foods from '@/page/Foods'
+import UploadImage from '@/page/UploadImage'
 
 Vue.use(Router)
 
@@ -59,6 +60,11 @@ export default new Router({
       path: '/foods',
       name: 'Foods',
       component: Foods
+    },
+    {
+      path: '/uploadImage',
+      name: 'UploadImage',
+      component: UploadImage
     }
   ]
 })
